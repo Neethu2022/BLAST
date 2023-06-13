@@ -3,8 +3,8 @@ class Obstacle {
     this.gameScreen = gameScreen;
     this.left = 400;
     this.top = Math.floor(Math.random() * 300 + 250);
-    this.width = 50;
-    this.height = 50;
+    this.width = 30;
+    this.height = 30;
     this.element = document.createElement("img");
 
     this.element.src = "./images/bullet.png";

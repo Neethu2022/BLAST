@@ -61,17 +61,21 @@ class Game {
       const obstacle = this.obstacles[i];
       obstacle.move();
 
-      // If the player's car collides with an obstacle
+      // If the player collides with an obstacle
       if (this.player.didCollide(obstacle)) {
         // Remove the obstacle element from the DOM
+
         obstacle.element.remove();
-        // player.element.remove();
+
+        //man.element.remove();
         // Remove obstacle object from the array
         this.obstacles.splice(i, 1);
         this.playcollision();
+
         // Reduce player's lives by 1
         this.lives--;
         document.getElementById("lives").innerHTML = this.lives;
+
         // Update the counter variable to account for the removed obstacle
 
         i--;
