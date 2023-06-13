@@ -18,7 +18,7 @@ class Player {
     this.gameScreen.appendChild(this.element);
   }
   move() {
-    // Update player's car position based on directionX and directionY
+    // Update player's  position based on directionX and directionY
     this.left += this.directionX;
     this.top += this.directionY;
     // Ensure the player's car stays within the game screen
@@ -104,6 +104,7 @@ class player extends Component {
       playerRect.bottom > obstacleRect.top
     ) {
       console.log("Crash!");
+      game.bouncesound.play();
       return true;
     } else {
       return false;

@@ -1,13 +1,13 @@
 class Obstacle {
   constructor(gameScreen) {
     this.gameScreen = gameScreen;
-    this.left = Math.floor(Math.random() * 300 + 70);
-    this.top = 0;
-    this.width = 100;
-    this.height = 150;
+    this.left = 400;
+    this.top = Math.floor(Math.random() * 300 + 250);
+    this.width = 50;
+    this.height = 50;
     this.element = document.createElement("img");
 
-    this.element.src = "./images/redCar.png";
+    this.element.src = "./images/bullet.png";
     this.element.style.position = "absolute";
     this.element.style.width = `${this.width}px`;
     this.element.style.height = `${this.height}px`;
@@ -25,7 +25,8 @@ class Obstacle {
 
   move() {
     // Move the obstacle down by 3px
-    this.top += 3;
+    this.left += -3;
+    //this.height = 100;
     // Update the obstacle's position on the screen
     this.updatePosition();
   }
@@ -39,13 +40,13 @@ class obstacle extends Component {
       0,
       100,
       150,
-      "./images/redCar.png"
+      "./images/bullet.png"
     );
   }
 
   move() {
     // Move the obstacle down by 3px
-    this.top += 3;
+    this.right += -2;
     // Update the obstacle's position on the screen
     this.updatePosition();
   }

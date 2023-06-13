@@ -4,12 +4,19 @@ class Game {
     this.startScreen = document.getElementById("game-intro");
     this.gameScreen = document.getElementById("game-screen");
     this.gameEndScreen = document.getElementById("game-end");
+    this.gameSound = document.getElementById("game-sound");
+    this.collisionSound = document.getElementById("collision-sound");
+
     this.player = null;
     this.height = 600;
     this.width = 500;
     this.obstacle = [];
     this.score = 0;
     this.lives = 3;
+    //this.gamesound;
+    //this.musicIsPlaying = 0;
+    //this.bouncesound;
+    //this.collisionsound;
     this.gameIsOver = false;
     this.player = new Player(
       this.gameScreen,
@@ -17,16 +24,27 @@ class Game {
       500,
       100,
       150,
-      "./images/car.png"
+      "./images/man.png"
     );
     this.obstacles = [];
+    //this.gamesound = loadSound("../game.mp3");
+    //this.bouncesound = loadSound("../bounce.mp3");
+    //this.collisionsound = loadSound("../collision.mp3");
+  }
+  playSound() {
+    this.gameSound.play();
+  }
+  playcollision() {
+    this.collisionSound.play();
   }
   start() {
+    this.playSound();
     this.gameScreen.style.width = `${this.width}px`;
     this.gameScreen.style.height = `${this.width}px`;
     this.startScreen.style.display = "none";
     this.gameScreen.style.display = "block";
     this.gameLoop();
+    // this.gamesound.play();
   }
   gameLoop() {
     console.log("inside loop method");
@@ -47,15 +65,18 @@ class Game {
       if (this.player.didCollide(obstacle)) {
         // Remove the obstacle element from the DOM
         obstacle.element.remove();
+        // player.element.remove();
         // Remove obstacle object from the array
         this.obstacles.splice(i, 1);
+        this.playcollision();
         // Reduce player's lives by 1
         this.lives--;
         document.getElementById("lives").innerHTML = this.lives;
         // Update the counter variable to account for the removed obstacle
+
         i--;
       } // If the obstacle is off the screen (at the bottom)
-      else if (obstacle.top > this.height) {
+      else if (obstacle.left < 0) {
         // Increase the score by 1
         this.score++;
         document.getElementById("score").innerHTML = this.score;
