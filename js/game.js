@@ -95,7 +95,11 @@ class Game {
 
     // If the lives are 0, end the game
     if (this.lives === 0) {
-      this.endGame();
+      // this.handlePlayerDeath();
+      this.player.changeEnding("./images/dead-man.png");
+      setTimeout(() => {
+        this.endGame();
+      }, 300);
     }
 
     // Create a new obstacle based on a random probability
