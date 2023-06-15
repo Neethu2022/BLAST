@@ -1,6 +1,6 @@
 ![logo_ironhack_blue 7](https://user-images.githubusercontent.com/23629340/40541063-a07a0a8a-601a-11e8-91b5-2f13e4e6b441.png)
 
-# project | Huddles
+# project | Blast
 
 ![Bump Logo](images/bump.png)
 
@@ -27,7 +27,7 @@
 
 ## Introduction
 
-We are ready to start making 2d games using the knowledge we have gained so far in HTML, CSS, and JavaScript. In this exercise, we will create a **Huddles** game using DOM manipulation, classes, and object-oriented programming (OOP).
+We are ready to start making 2d games using the knowledge we have gained so far in HTML, CSS, and JavaScript. In this exercise, we will create a **Blast** game using DOM manipulation, classes, and object-oriented programming (OOP).
 
 The goal of this exercise is to help you practice for the Module 1 project.
 
@@ -427,7 +427,7 @@ class Game {
       500,
       100,
       150,
-      "./images/car.png"
+      "./images/man.png"
     );
     // ...
   }
@@ -464,8 +464,6 @@ class Game {
 </details>
 
 <br>
-
-![island racer game - player car showing](https://education-team-2020.s3.eu-west-1.amazonaws.com/web-dev/m1/lab-dom-race-car/lab-dom-race-car-player.png)
 
 <br>
 
@@ -529,8 +527,6 @@ window.onload = function () {
 </details>
 
 <br>
-
-<img src="https://education-team-2020.s3.eu-west-1.amazonaws.com/web-dev/m1/lab-dom-race-car/lab-dom-race-car-start-game-player.gif" width="600" style="display: block; margin: 0 auto" />
 
 <br>
 
@@ -748,8 +744,6 @@ class Game {
 
 <br>
 
-<img src="https://education-team-2020.s3.eu-west-1.amazonaws.com/web-dev/m1/lab-dom-race-car/lab-dom-race-car-start-game-obstacles.gif" width="600" style="display: block; margin: 0 auto" />
-
 <br>
 
 ## Iteration 8: End Game Screen
@@ -887,7 +881,7 @@ class Player extends Component {
       playerRect.top < obstacleRect.bottom &&
       playerRect.bottom > obstacleRect.top
     ) {
-      console.log("Crash!");
+      console.log("Shot!");
       return true;
     } else {
       return false;
@@ -909,7 +903,7 @@ class Obstacle extends Component {
       0,
       100,
       150,
-      "./images/redCar.png"
+      "./images/bullet.png"
     );
   }
 
@@ -921,37 +915,3 @@ class Obstacle extends Component {
   }
 }
 ```
-
-<br>
-
-</details>
-
-<br>
-
-## BONUS - Iteration 10: Points, points, points
-
-To make the game more competitive, add elements to shows the player's score and lives. These elements should display the remaining lives and accumulated points as the player successfully avoids obstacles.
-
-![](https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/upload_e4b1a09cee1b1a827a2c68023d0d2b1f.png)
-
-<br>
-
-## Lab Solution
-
-You can find the complete solution code for the lab at: [dom-race-car](https://github.com/ironhack-labs/lesson-code-dom-race-car).
-
-To clone the solution repository, run the following commands:
-
-```shell
-# clone the repo
-git clone https://github.com/ironhack-labs/lesson-code-dom-race-car.git
-
-# navigate to the cloned repo
-cd lesson-code-dom-race-car
-```
-
-<br>
-
-**Happy coding!** :heart:
-# Huddles
-# BLAST
