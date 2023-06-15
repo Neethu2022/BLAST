@@ -32,7 +32,11 @@ class Game {
     //this.collisionsound = loadSound("../collision.mp3");
   }
   playSound() {
-    this.gameSound.play();
+    if (this.lives === 3) {
+      this.gameSound.play();
+    } else if (this.lives === 0) {
+      this.gameSound.onpause();
+    }
   }
   playcollision() {
     this.collisionSound.play();
